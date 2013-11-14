@@ -21,7 +21,6 @@ DrawingHelper.demiFlecheHorizontale = function(ct, y, xDebut, xFin, couleur) {
     ct.stroke();
 };
 
-
 DrawingHelper.flecheHorizontale = function(ct, y, xDebut, xFin, couleur) {
 
     var temp;
@@ -66,7 +65,6 @@ DrawingHelper.flecheVerticale = function(ct, x, yDebut, yFin, couleur) {
     ct.lineTo(x + tailleDeLaPointeDeLaFleche, yFin + tailleDeLaPointeDeLaFleche);
 
     ct.stroke();
-
 };
 
 DrawingHelper.demiFlecheVerticale = function(ct, x, yDebut, yFin, couleur) {
@@ -87,7 +85,6 @@ DrawingHelper.demiFlecheVerticale = function(ct, x, yDebut, yFin, couleur) {
     ct.lineTo(x + tailleDeLaPointeDeLaFleche, yFin + tailleDeLaPointeDeLaFleche);
 
     ct.stroke();
-
 };
 
 module.exports = DrawingHelper;

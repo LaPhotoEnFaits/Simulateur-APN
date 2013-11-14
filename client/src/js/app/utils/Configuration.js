@@ -1,5 +1,5 @@
-var Configuration = function(){
-    this.systemeMesure = "METRIQUE";
+var Configuration = function() {
+	this.systemeMesure = "METRIQUE";
 };
 
 module.exports = Configuration;
