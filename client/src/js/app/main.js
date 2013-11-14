@@ -16,11 +16,15 @@ window.onload = function() {
 
     // Init model
     var sujets = [
+        // Utiliser des datas objects comme pour  new APN({ pour rendre le code plus lisible à la création
+        // Définir les données dans des fichiers à part
         new Sujet("MasqueGaz", 10, 'http://commondatastorage.googleapis.com/simuapn%2FTESTLPEF%2Fsilhouettes%2FMasqueGaz.png', 0.3),
         new Sujet("WalterWalt", 30, 'http://commondatastorage.googleapis.com/simuapn%2FTESTLPEF%2Fsilhouettes%2FWalt.gif', 1.8),
         new Sujet("Camion", 100, 'http://commondatastorage.googleapis.com/simuapn%2FTESTLPEF%2Fsilhouettes%2FCamion.png', 2.2)
     ];
 
+    // TODO plutot que tout mettre dans le main.js, utiliser un autre fichier dans un dossier spécifiques (ex: data)
+    // A terme ses données pourraient venir d'un webservice tiers (on peut rêver)
     var apnChoisi = new APN({
         marque: 'Nikon',
         modele : 'D800',
@@ -51,10 +55,13 @@ window.onload = function() {
         boitierProfondeur : 82,
         filtreAntiAliasing : 1
     });
+    // utiliser un properties object
+    // Mettre dans un fichier à part
     var objectifChoisi = new Objectif('50mm f/1.8', 50, 1.8, 0, 17, 7, 7, [11.3, 16, 7.5, 2], [63.5, 63.5, 63.5, 55.4], [2.2, 0, 0], 4);
 
 
     // Init views
+    //  A quoi sert FlouDeMAPView ?? ne pas l'init ni l'importer 
     // new FlouDeMAPView(configuration, sujets);
     new PhotoView(configuration, sujets, apnChoisi, objectifChoisi);
 };

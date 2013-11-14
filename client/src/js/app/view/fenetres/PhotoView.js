@@ -6,6 +6,12 @@ PhotoView = function(configuration, sujets, apnChoisi, objectifChoisi) {
 	this.dom = {
 		root: document.getElementById("PhotoView"),
 		canvas: document.getElementById("PhotoCanvas"),
+		/**
+		* Cet input ne devrait pas être dans cette vue mais dans une vue à part
+		* Cet autre vue s'occuperai de mettre à jour le modèle 'sujets' 
+		* qui émettrai un évènement lorsque sa distance change
+		* la vue PhotoView réagirait au changement d'état d'un sujet en appelant sa fonction render()
+		*/
 		inputDistanceAvantPlan: document.getElementById("distanceAvantPlan")
 	};
 
@@ -18,7 +24,6 @@ PhotoView = function(configuration, sujets, apnChoisi, objectifChoisi) {
 };
 
 
-
 PhotoView.prototype.render = function render() {
 
 	var ct = this.dom.canvas.getContext('2d');
@@ -27,6 +32,7 @@ PhotoView.prototype.render = function render() {
 	var hauteurCanvas = LARGEUR * this.apnChoisi.capteurHauteur / this.apnChoisi.capteurLargeur;
 	this.dom.canvas.height = hauteurCanvas;
 
+	// Pas vraiment utile, les déclarer au moment où l'on s'en sert (on n'est pas en embarqué :) )
 	var X;
 	var Y;
 	var largeurPixel;
