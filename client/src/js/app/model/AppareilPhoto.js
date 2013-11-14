@@ -1,32 +1,9 @@
-APN = function(marque, modele, gamme, date, prix, capteurFormat, capteurHauteur, capteurLargeur, capteurDefinition, capteurTechno, capteurProfCouleur, capteurDynamique, capteurLowLightISO, ISOmin, ISOmax, ISOboost, ptsAF, FPS, xGross, visee, tropicalisation, viseeElec, tailleEcran, poids, boitierLargeur, boitierHauteur, boitierProfondeur, filtreAntiAliasing) {
-	this.marque = marque;
-	this.modele = modele;
-	this.gamme = gamme;
-	this.date = date;
-	this.prix = prix;
-	this.capteurFormat = capteurFormat;
-	this.capteurLargeur = capteurLargeur;
-	this.capteurHauteur = capteurHauteur;
-	this.capteurDefinition = capteurDefinition;
-	this.capteurTechno = capteurTechno;
-	this.capteurProfCouleur = capteurProfCouleur;
-	this.capteurDynamique = capteurDynamique;
-	this.capteurLowLightISO = capteurLowLightISO;
-	this.ISOmin = ISOmin;
-	this.ISOmax = ISOmax;
-	this.ISOboost = ISOboost;
-	this.ptsAF = ptsAF;
-	this.FPS = FPS;
-	this.xGross = xGross;
-	this.visee = visee;
-	this.tropicalisation = tropicalisation;
-	this.viseeElec = viseeElec;
-	this.tailleEcran = tailleEcran;
-	this.poids = poids;
-	this.boitierLargeur = boitierLargeur;
-	this.boitierHauteur = boitierHauteur;
-	this.boitierProfondeur = boitierProfondeur;
-	this.filtreAntiAliasing = filtreAntiAliasing;
+APN = function(propertiesObject) {
+	for (var propName in propertiesObject) {
+		if (propertiesObject.hasOwnProperty(propName)) {
+			this[propName] = propertiesObject[propName];
+		}
+	}
 };
 
 module.exports = APN;
