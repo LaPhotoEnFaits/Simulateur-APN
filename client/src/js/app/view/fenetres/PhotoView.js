@@ -14,6 +14,7 @@ PhotoView = function(configuration, sujets, apnChoisi, objectifChoisi) {
 	this.apnChoisi = apnChoisi;
 	this.objectifChoisi = objectifChoisi;
 	this.bindEvents();
+	this.render();
 };
 
 
